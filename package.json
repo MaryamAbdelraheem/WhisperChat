@@ -1,0 +1,10 @@
+{
+  "name": "whatsapp-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WhatsApp-style Node.js chat clone with WebSockets",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
