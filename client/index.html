@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhisperChat - Two Phone Realtime Demo</title>
+    <meta
+      name="description"
+      content="A WhatsApp-style realtime chat demo that shows two phones chatting on the same page."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">Realtime WhatsApp Architecture</p>
+      <h1>Two phone screens, one live room</h1>
+      <p class="hero-copy">
+        Open the same room code on both simulated phones below and watch the
+        messages sync instantly through WebSockets.
+      </p>
+    </header>
+
+    <main class="lab">
+      <section class="phone" data-device="left">
+        <div class="phone__frame">
+          <div class="phone__topbar">
+            <div>
+              <p class="device-label">Phone A</p>
+              <strong class="device-name" data-device-name>Guest</strong>
+            </div>
+            <span class="status-pill" data-connection>Disconnected</span>
+          </div>
+
+          <div class="phone__join" data-join-panel>
+            <label>
+              <span>Room code</span>
+              <input data-room-code type="text" placeholder="family-01" />
+            </label>
+            <label>
+              <span>Your name</span>
+              <input data-display-name type="text" placeholder="Maryam" />
+            </label>
+            <label>
+              <span>Room title</span>
+              <input data-room-name type="text" placeholder="Family Chat" />
+            </label>
+            <button class="send-button" data-join-button type="button">Join room</button>
+          </div>
+
+          <div class="phone__content" data-chat-panel hidden>
+            <div class="chat-header">
+              <div class="chat-header__contact">
+                <div class="avatar avatar--sm" data-avatar>A</div>
+                <div>
+                  <strong data-room-title>Live Chat</strong>
+                  <p data-room-status>Waiting for the other phone</p>
+                </div>
+              </div>
+              <button class="icon-button" data-leave-button type="button" aria-label="Leave room">
+                ×
+              </button>
+            </div>
+
+            <div class="chat-meta">
+              <div>
+                <span class="meta-label">Room</span>
+                <strong data-room-code-label>-</strong>
+              </div>
+              <div>
+                <span class="meta-label">Connected phones</span>
+                <strong data-participant-count>0</strong>
+              </div>
+            </div>
+
+            <div class="messages" data-message-stream></div>
+
+            <footer class="composer">
+              <button class="icon-button" type="button" aria-label="Add attachment">＋</button>
+              <form class="composer__form" data-message-form>
+                <input
+                  data-message-input
+                  type="text"
+                  placeholder="Type a message"
+                  autocomplete="off"
+                  maxlength="500"
+                />
+                <button class="send-button" type="submit">Send</button>
+              </form>
+              <button class="icon-button" type="button" aria-label="Voice note">🎤</button>
+            </footer>
+          </div>
+        </div>
+      </section>
+
+      <section class="phone" data-device="right">
+        <div class="phone__frame">
+          <div class="phone__topbar">
+            <div>
+              <p class="device-label">Phone B</p>
+              <strong class="device-name" data-device-name>Guest</strong>
+            </div>
+            <span class="status-pill" data-connection>Disconnected</span>
+          </div>
+
+          <div class="phone__join" data-join-panel>
+            <label>
+              <span>Room code</span>
+              <input data-room-code type="text" placeholder="family-01" />
+            </label>
+            <label>
+              <span>Your name</span>
+              <input data-display-name type="text" placeholder="Ahmed" />
+            </label>
+            <label>
+              <span>Room title</span>
+              <input data-room-name type="text" placeholder="Family Chat" />
+            </label>
+            <button class="send-button" data-join-button type="button">Join room</button>
+          </div>
+
+          <div class="phone__content" data-chat-panel hidden>
+            <div class="chat-header">
+              <div class="chat-header__contact">
+                <div class="avatar avatar--sm" data-avatar>A</div>
+                <div>
+                  <strong data-room-title>Live Chat</strong>
+                  <p data-room-status>Waiting for the other phone</p>
+                </div>
+              </div>
+              <button class="icon-button" data-leave-button type="button" aria-label="Leave room">
+                ×
+              </button>
+            </div>
+
+            <div class="chat-meta">
+              <div>
+                <span class="meta-label">Room</span>
+                <strong data-room-code-label>-</strong>
+              </div>
+              <div>
+                <span class="meta-label">Connected phones</span>
+                <strong data-participant-count>0</strong>
+              </div>
+            </div>
+
+            <div class="messages" data-message-stream></div>
+
+            <footer class="composer">
+              <button class="icon-button" type="button" aria-label="Add attachment">＋</button>
+              <form class="composer__form" data-message-form>
+                <input
+                  data-message-input
+                  type="text"
+                  placeholder="Type a message"
+                  autocomplete="off"
+                  maxlength="500"
+                />
+                <button class="send-button" type="submit">Send</button>
+              </form>
+              <button class="icon-button" type="button" aria-label="Voice note">🎤</button>
+            </footer>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
